@@ -18,6 +18,23 @@ public abstract class Usuario implements Autenticable {
 			return true;
 		}
 		return false;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public String getPassword() {
+		return password;
 	} 
+	
 
 }

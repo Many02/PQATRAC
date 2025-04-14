@@ -13,5 +13,14 @@ public abstract class LugarTrabajo {
 		this.ubicacion = ubicacion;
 		this.empleados = empleados;
 	}
+	public String getNombre() {
+		return nombre;
+	}
+	public String getUbicacion() {
+		return ubicacion;
+	}
+	public List<Empleado> getEmpleados() {
+		return empleados;
+	}
 	
 }

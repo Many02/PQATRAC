@@ -2,6 +2,7 @@ package servicio;
 
 import java.util.List;
 
+import exceptions.RequisitoNoCumplido;
 import usuarios.Empleado;
 
 public class LugarServicio extends LugarTrabajo {
@@ -9,7 +10,7 @@ public class LugarServicio extends LugarTrabajo {
 		CAFETERIA,TAQUILLA,TIENDA
 	}
 	private TipoServicio tipoServicio;
-	public LugarServicio(String nombre, String ubicacion, List<Empleado> empleados, TipoServicio tipoServicio) {
+	public LugarServicio(String nombre, String ubicacion, List<Empleado> empleados, TipoServicio tipoServicio) throws RequisitoNoCumplido {
 		super(nombre, ubicacion, empleados);
 		this.tipoServicio = tipoServicio;
 		if (tipoServicio == TipoServicio.CAFETERIA) {
@@ -21,7 +22,7 @@ public class LugarServicio extends LugarTrabajo {
 				}
 			}
 			if (!hay) {
-				throw new IllegalArgumentException("");
+				throw new RequisitoNoCumplido(nombre);
 			}
 		}
 		
